@@ -1,20 +1,53 @@
 <h1>編集</h1>
 
+<form class="form-horizontal" role="form">
 <%= form_for @user do |f| %>
 
-  <%= f.label :性別（任意） %>
-  <%= f.text_field :sex %>
- 
-  <%= f.label :メールアドレス %>
-  <%= f.text_field :email %>
- 
-  <%= f.label :プロフィール（任意） %>
-  <%= f.text_area :profile %>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-10">
+      <% unless @user.errors.empty? %><h4 style="color: red;">入力に誤りがあります。</h4>
+        <ul class="error_messages">
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul> 
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label :性別, :class => "col-sm-3 countrol-label" %>
+    <div class="col-sm-7">
+      <%= f.text_field :sex, :class => "form-control" %>
+    </div>
+  </div>
   
-  <%= f.submit "Edit my profile", class: "btn btn-large btn-primary" %>
+  <div class="form-group">
+    <%= f.label :メールアドレス, :class => "col-sm-3 countrol-label" %>
+    <div class="col-sm-7">
+      <%= f.text_field :email, :class => "form-control" %>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :プロフィール, :class => "col-sm-3 countrol-label" %>
+    <div class="col-sm-7">
+      <%= f.text_field :profile, :class => "form-control" %>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit "Edit my profile", :class => "btn btn-default" %>
+    </div>
+  </div>
+
 
 <% end %>
+</div>
 
 <p>
 <%= link_to '← go back profile', user_path %>
 </p>
+

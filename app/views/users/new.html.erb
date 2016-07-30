@@ -11,10 +11,14 @@
       <%= f.label :email %>
       <%= f.text_field :email %>
 
-      <%= f.label :sex(任意） %>
+      <%= f.label :sex do %>
+        sex(任意)
+      <% end %>
       <%= f.text_field :sex %>
 
-      <%= f.label :profile（任意） %>
+      <%= f.label :profile do %>
+        profile(任意)
+      <% end%>
       <%= f.text_field :profile %>
 
       <%= f.label :password %>
