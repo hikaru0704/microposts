@@ -1,7 +1,6 @@
 <h1>編集</h1>
 
-<form class="form-horizontal" role="form">
-<%= form_for @user do |f| %>
+<%= form_for @user, html: {class: "form-horizontal"} do |f| %>
 
   <div class="form-group">
     <div class="col-sm-offset-3 col-sm-10">

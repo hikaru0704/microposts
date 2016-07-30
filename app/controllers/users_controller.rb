@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       # 保存に成功した場合はトップページへリダイレクト
       redirect_to root_path , notice: 'ユーザー情報を更新しました'
-      render 'show'
+      
     else
       # 保存に失敗した場合は編集画面へ戻す
       render 'edit' , notice: 'ユーザー情報の更新に失敗しました'
