@@ -7,6 +7,11 @@
       </h1>
     </section>
   </aside>
+  
+  <section class="stats">
+    <%= render 'stats' %>
+  </section>
+
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
@@ -17,3 +22,4 @@
     <% end %>
   </div>
 </div>
+
