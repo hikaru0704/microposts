@@ -18,9 +18,9 @@ class UsersController < ApplicationController
     end
   end
   
-  def followings#追加
+  def following#追加
       @user  = User.find(params[:id])
-      @users = @user.following
+      @users = @user.following_users
       render 'show_follow'
   end
 

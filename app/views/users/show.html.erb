@@ -7,11 +7,12 @@
       </h1>
     </section>
   </aside>
-  
-  <section class="follow">
-    <%= render 'stats' %>
-  </section>
 
+ <section class="stats">
+  <%= render 'stats' %>
+ </section>
+
+ 
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
