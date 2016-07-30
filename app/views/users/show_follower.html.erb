@@ -1,5 +1,4 @@
-<% @user_followers_each do |user| %>
-<table>
+<% @users.each do |user| %>
 <tr>
   <td>  <%= user.name %> </td>
   <td><%= link_to '詳細', user_path(user) %></td>
