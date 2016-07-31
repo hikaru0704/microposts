@@ -1,7 +1,13 @@
 <% @users.each do |user| %>
+
+<h1>following</h1>
+
 <table>
 <tr>
-  <td>  <%= user.name %> </td>
+  <td>  
+  <%= gravatar_for @user %>
+  <%= user.name %> 
+  </td>
   <td><%= link_to '詳細', user_path(user) %></td>
 </tr>
 
