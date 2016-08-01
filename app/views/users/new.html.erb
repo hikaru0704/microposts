@@ -3,30 +3,51 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
-    　　<%= render 'shared/error_messages', object: f.object %> <!-- ここを追加 -->
+        <%= render 'shared/error_messages', object: f.object %> <!-- ここを追加 -->
 
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+       <div class="form-group">
+         <%= f.label :名前（必須）, :class => "col-sm-3 countrol-label" %>
+         <div class="col-sm-7">
+           <%= f.text_field :name, :class => "form-control" %>
+         </div>
+       </div>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+      <div class="form-group">
+        <%= f.label :メール（必須）, :class => "col-sm-3 countrol-label" %>
+        <div class="col-sm-7">
+          <%= f.text_field :email, :class => "form-control" %>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <%= f.label :パスワード（必須）, :class => "col-sm-3 countrol-label" %>
+        <div class="col-sm-7">
+          <%= f.text_field :password, :class => "form-control" %>
+        </div>
+      </div>
 
-      <%= f.label :sex do %>
-        sex(任意)
-      <% end %>
-      <%= f.text_field :sex %>
+      <div class="form-group">
+        <%= f.label :password_confirmation, "パスワード確認（必須）", :class => "col-sm-3 countrol-label" %>
+        <div class="col-sm-7">
+          <%= f.password_field :password_confirmation, :class => "form-control" %>
+        </div>
+      </div>
 
-      <%= f.label :profile do %>
-        profile(任意)
-      <% end%>
-      <%= f.text_field :profile %>
+      <div class="form-group">
+         <%= f.label :性別, :class => "col-sm-3 countrol-label" %>
+         <div class="col-sm-7">   
+           <label><%= f.radio_button :sex, "男" %>男</label>
+           <label><%= f.radio_button :sex, "女" %>女</label>
+         </div>
+      </div>      
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <div class="form-group">
+        <%= f.label :プロフィール, :class => "col-sm-3 countrol-label" %>
+        <div class="col-sm-7">
+          <%= f.text_field :profile, :class => "form-control" %>
+        </div>
+      </div>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
-      
       <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>

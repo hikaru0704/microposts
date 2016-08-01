@@ -5,16 +5,25 @@
 
 <%= form_for @user do |f| %>
 
-  <%= f.label :性別 %>
-  <%= f.text_field :sex, :readonly => true %>
- 
-  <%= f.label :メールアドレス %>
-  <%= f.text_field :email, :readonly => true %>
- 
-  <%= f.label :プロフィール %>
-  <%= f.text_field :profile, :readonly => true %>
-  
+  <div class="form-group">
+    <%= f.label :性別, :class => "col-sm-3 countrol-label" %>
+    <div class="col-sm-7">
+      <%= f.text_field :sex, :readonly => true, :class => "form-control" %>
+    </div>
+  </div>
+
+ <div class="form-group">
+    <%= f.label :メールアドレス, :class => "col-sm-3 countrol-label" %>
+    <div class="col-sm-7">
+      <%= f.text_field :email, :readonly => true, :class => "form-control" %>
+    </div>
+  </div>
+
+ <div class="form-group">
+    <%= f.label :プロフィール, :class => "col-sm-3 countrol-label" %>
+    <div class="col-sm-7">
+      <%= f.text_field :profile, :readonly => true, :class => "form-control" %>
+    </div>
+  </div>
+
 <% end %>
-
-
-
