@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
  before_action :set_user, only: [:edit, :update, :destroy, :show]
 
- def edit
- end
+  def edit
+    @user = User.find(params[:id])
+  end
  
  def update #追加（更新処理）
     if @user.update(user_params)
